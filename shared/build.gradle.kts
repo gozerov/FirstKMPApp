@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.serialization)
 }
 
 kotlin {
@@ -42,13 +43,24 @@ kotlin {
                 implementation(compose.animation)
                 implementation(compose.components.resources)
                 implementation(compose.components.uiToolingPreview)
+
                 implementation(libs.ktor.core)
+                implementation(libs.ktor.logging)
+                implementation(libs.ktor.client.content.negotiation)
+                implementation(libs.ktor.serialization.kotlinx.json)
+
                 implementation(libs.coil.compose.core)
                 implementation(libs.coil.mp)
                 implementation(libs.coil.network.ktor)
                 implementation(libs.coil.compose)
                 implementation(libs.odyssey.core)
                 implementation(libs.odyssey.compose)
+
+                implementation(libs.koin.core)
+
+                implementation(libs.kviewmodel.core)
+                implementation(libs.kviewmodel.compose)
+                implementation(libs.kviewmodel.odyssey)
             }
         }
         val commonTest by getting {

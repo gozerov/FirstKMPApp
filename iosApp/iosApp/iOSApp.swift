@@ -10,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainViewController = Main_iosKt.MainViewController()
         window?.rootViewController = mainViewController
         window?.makeKeyAndVisible()
+        KoinStarterKt.doInitKoin()
         return true
     }
 }
